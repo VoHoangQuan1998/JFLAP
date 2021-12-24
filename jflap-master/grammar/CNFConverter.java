@@ -118,6 +118,9 @@ public class CNFConverter {
 	    throw new UnsupportedOperationException
 		("26 variables available, but "+needed+" needed!");
 	}
+    }
+    public static  ProductionRename[] makeSubstitution(Production[] p, HashMap replacements, Production[] n)
+    {
 	// Build the replacement map.
 	HashMap replacements = new HashMap();
 	Iterator it = unresolved.iterator(), it2 = vars.iterator();
@@ -132,9 +135,9 @@ public class CNFConverter {
 		else rhs+=replacements.get(tokens[j]);
 	    String lhs = p[i].getLHS();
 	    if (lhs.length() != 1) lhs = (String) replacements.get(lhs);
-	    pnew[i] = new ProductionRename(lhs, rhs);
-	}
-	return pnew;
+	    n[i] = new ProductionRename(lhs, rhs);
+	
+	return n;
     }
 
     /**

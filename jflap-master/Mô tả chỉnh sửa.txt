@@ -1,0 +1,12 @@
+*Mô tả các nội dung đã chỉnh sửa
+ -Thay đổi tên lớp GrammarToAutomatonConverter trong thư mục grammar thành GrammarToAutoConvert
+ -Di chuyển lớp NondeterminismDetector trong thư mục automata vào thư mục gui/deterministic
+ -Đổi tên phương thức isLinear trong lớp ProductionChecker thành isLine
+ -Đổi tên phương thức cleanAutomaton(Automaton a) thành cleanAuto(Automaton a)
+ -Đổi tên lớp Automaton trong thư mục grammar thành AutomatonState
+ - Trong lớp ParsePane có phương thức initInputPanel() viết khá dài cho nên ta sử dụng phương pháp
+   Extract method tách 3 phần trong phương thức initInputPanel() thành 3 phương thức con và đặt tên 
+   là: input(panel, c), inputRemaining(panel, c), stack(panel, c)
+ - Tách 1 phần code trong phương thức convert(Production[] p) của lớp CNFConvert thành 1 phương thức con và đặt tên là:
+   makeSubstitution(Production[] p, HashMap replacements, Production[] n)
+ -Đổi tên lớp AutomatonChecker trong thư mục automata thành AutomatonCheck
